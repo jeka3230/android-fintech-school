@@ -1,0 +1,13 @@
+<resources>
+    <string name="label_save">Save</string>
+    <string name="hint_player_name">Player 1</string>
+    <string name="label_score">Score: %d</string>
+    <string name="format_score_table">"%1$d.   %2$s         %3$d"</string>
+    <string name="title_err_dialog">Error</string>
+    <string name="message_err_save_score">Something went wrong</string>
+    <string name="label_repeat">Repeat</string>
+    <string name="label_app_is_locked">Consider buying full version!</string>
+    <string name="label_choose">Choose</string>
+    <string name="pause">pause</string>
+    <string name="settings">settings</string>
+</resources>

@@ -3,8 +3,11 @@ package ru.tinkoff.school;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+<<<<<<< HEAD
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+=======
+>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -58,6 +61,7 @@ public class Utils {
             }
         }
     }
+<<<<<<< HEAD
 
     public static Bitmap decodeSampledBitmapFromFile(String fileName, int width, int height) {
         // First decode with inJustDecodeBounds=true to check dimensions
@@ -92,4 +96,6 @@ public class Utils {
 
         return inSampleSize;
     }
+=======
+>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
 }

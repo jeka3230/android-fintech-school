@@ -1,6 +1,10 @@
 <resources>
     <!-- TODO добавить локализацию на Английский язык -->
+<<<<<<< HEAD
     <string name="app_name">Уроки 1–2</string>
+=======
+    <string name="app_name">Lessons 1–2</string>
+>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
     <string name="capture_photo">Сделать фото</string>
     <string name="choose_photo">Выбрать изображение</string>
     <string name="send">Отправить</string>

@@ -9,7 +9,10 @@ import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
+<<<<<<< HEAD
 import android.util.Log;
+=======
+>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -40,8 +43,12 @@ public class ImageProcessingService extends IntentService {
         String fileName = intent.getStringExtra(PATH_EXT);
         int width = intent.getExtras().getInt(WIDTH_EXT);
         int height = intent.getExtras().getInt(HEIGHT_EXT);
+<<<<<<< HEAD
         Log.d("params", fileName + " " + width + " " + height);
         Bitmap sampled = Utils.decodeSampledBitmapFromFile(fileName, width, height);
+=======
+        Bitmap sampled = decodeSampledBitmapFromFile(fileName, width, height);
+>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
         Bitmap blackAndWhite = toBlackAndWhite(sampled);
 
         try {
@@ -51,7 +58,11 @@ public class ImageProcessingService extends IntentService {
             e.printStackTrace();
         }
 
+<<<<<<< HEAD
         ImageProcessingBroadcastReceiver.notifyReceiver(this, blackAndWhite, Utils.getFullFileName(this));
+=======
+        ImageProcessingBroadcastReceiver.notifyReceiver(this, blackAndWhite);
+>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
     }
 
     private void writeToFile(Bitmap bitmap) throws IOException {
@@ -83,4 +94,41 @@ public class ImageProcessingService extends IntentService {
         c.drawBitmap(input, 0, 0, paint);
         return output;
     }
+<<<<<<< HEAD
+=======
+
+    private Bitmap decodeSampledBitmapFromFile(String fileName, int width, int height) {
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(fileName, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, width, height);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeFile(fileName, options);
+    }
+
+    private int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+            // Calculate ratios of height and width to requested height and width
+            final int heightRatio = Math.round((float) height / (float) reqHeight);
+            final int widthRatio = Math.round((float) width / (float) reqWidth);
+
+            // Choose the smallest ratio as inSampleSize value, this will guarantee
+            // a final image with both dimensions larger than or equal to the
+            // requested height and width.
+            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+        }
+
+        return inSampleSize;
+    }
+>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
 }

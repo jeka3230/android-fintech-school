@@ -3,8 +3,11 @@
     package="ru.tinkoff.school">
 
     <!-- TODO добавить разрешение для доступа к External Storage -->
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+=======
+>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
 
     <application
         android:allowBackup="true"
@@ -14,6 +17,7 @@
         android:theme="@style/AppTheme">
 
         <activity
+<<<<<<< HEAD
             android:name="ru.tinkoff.school.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +31,19 @@
         <!-- TODO зарегистрировать сервис по обработе изображений -->
         <service android:name=".ImageProcessingService"/>
 
+=======
+            android:name="ru.tinkoff.school.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- TODO зарегистрировать GalleryActivity -->
+
+        <!-- TODO зарегистрировать сервис по обработе изображений -->
+>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
 
     </application>
 </manifest>

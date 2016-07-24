@@ -6,7 +6,11 @@ android {
 
     defaultConfig {
         applicationId "ru.tinkoff.school"
+<<<<<<< HEAD
         minSdkVersion 16
+=======
+        minSdkVersion 21
+>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"

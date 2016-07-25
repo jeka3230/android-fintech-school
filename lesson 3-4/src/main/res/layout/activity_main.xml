@@ -35,13 +35,21 @@
         android:layout_width="wrap_content"
         android:layout_gravity="right"
         android:text="@string/pause"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/main_btn_settings"
         android:layout_width="wrap_content"
         android:layout_gravity="right|bottom"
         android:text="@string/settings"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/main_btn_start"
+        android:layout_width="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:text="@string/start"
         android:layout_height="wrap_content" />
 
 </FrameLayout>

@@ -1,5 +1,1 @@
-//<<<<<<< HEAD
-//include ':lesson 1-2'
-
-//include ':lesson 1-2', 'lesson 3-4'
-//>>>>>>> 16c5c4eaff4e7481462fb061ce944e0afd4d38c3
+include ':lesson 1-2', 'lesson 3-4'

@@ -25,16 +25,18 @@ import ru.tinkoff.cake.R;
 import ru.tinkoff.cake.ValueAnimatorCompatManager;
 import ru.tinkoff.cake.fragment.ModelFragment;
 
-// TODO дополнительное задание. Сейчас игра начинается сразу при запуске MainActivity,
+//  дополнительное задание. Сейчас игра начинается сразу при запуске MainActivity,
 // нужно добавить кнопку, по нажатию на которую игра запустится
 // подсказка: вам может пригодится тот же самый код, который ставит игру на паузу
 public class MainActivity extends AppCompatActivity {
 
-    // TODO эта константа может пригодиться...
+    //  эта константа может пригодиться...
     private static final int CHOOSE_MODEL_REQUEST_CODE = 2323;
+    private static int currentModelPosition;
 
     public static void start(Context context) {
         Intent i = new Intent(context, MainActivity.class);
+        i.putExtra(ChoosePlayerModelActivity.EXTRA_MODEL_POSITION, currentModelPosition);
         context.startActivity(i);
     }
 
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button playPauseButton;
     private Button settingsButton;
+    private Button startButton;
 
     private ObjectAnimator playerAnimator;
     private ObjectAnimator dangerAnimator;
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener playerJumpClickListener;
     private View.OnClickListener pauseClickListener;
     private View.OnClickListener playClickListener;
+    private View.OnClickListener startClickListener;
 
     private ValueAnimatorCompatManager animatorManager;
 
@@ -83,24 +87,34 @@ public class MainActivity extends AppCompatActivity {
 
         playPauseButton = (Button) findViewById(R.id.main_btn_pause);
         settingsButton = (Button) findViewById(R.id.main_btn_settings);
+        startButton = (Button) findViewById(R.id.main_btn_start);
 
         animatorManager = new ValueAnimatorCompatManager();
-        LicenceManager licenceManager = new LicenceManager(this);
 
         initClickListeners();
 
-        if (licenceManager.isUserCanPlay()) {
-            initGame();
-        } else {
-            LicenceIsOverActivity.start(this);
-            finish();
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CHOOSE_MODEL_REQUEST_CODE) {
+            int position = data.getIntExtra(ChoosePlayerModelActivity.EXTRA_MODEL_POSITION, 1);
+            player.setImageResource(ModelFragment.MODELS[position]);
+            currentModelPosition = position;
         }
+    }
+    @Override
+    protected void onPause() {
+        pauseClickListener.onClick(playPauseButton);
+        super.onPause();
     }
 
     // TODO используя коллбеки жизненного цикла активити необходимо добавить возможность поставить игру на паузу при сворачивании окна
     // подсказка: механизм постановки на паузу можно подсмотреть в листенере кнопки PLAY/PAUSE
+//    проблемы при переходе в спящий режим
 
-    // TODO необходимо добавить возможность выбора цвета летательного аппарата через ChoosePlayerModelActivity, используя этот код
+    //  необходимо добавить возможность выбора цвета летательного аппарата через ChoosePlayerModelActivity, используя этот код
     // player.setImageResource(ModelFragment.MODELS[position]);
 
     private void initClickListeners() {
@@ -109,8 +123,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 playPauseButton.setText("PLAY");
                 playPauseButton.setOnClickListener(playClickListener);
-                root.setOnClickListener(null);
-                pauseAnimations();
+                if (root != null) {
+                    root.setOnClickListener(null);
+                    pauseAnimations();
+                }
+
             }
         };
 
@@ -127,7 +144,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ChoosePlayerModelActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, CHOOSE_MODEL_REQUEST_CODE);
+                pauseClickListener.onClick(playPauseButton);
+            }
+        });
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final LicenceManager licenceManager = new LicenceManager(MainActivity.this);
+                if (licenceManager.isUserCanPlay()) {
+                    playPauseButton.setVisibility(View.VISIBLE);
+                    startButton.setVisibility(View.GONE);
+                    initGame();
+                } else {
+                    LicenceIsOverActivity.start(MainActivity.this);
+                    finish();
+                }
             }
         });
     }
@@ -166,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
     private void initGame() {
         root = findViewById(R.id.main_fl_root);
         player = (ImageView) findViewById(R.id.main_iv_player);
+        currentModelPosition = getIntent().getIntExtra(ChoosePlayerModelActivity.EXTRA_MODEL_POSITION, 1);
+        player.setImageResource(ModelFragment.MODELS[currentModelPosition]);
         danger = findViewById(R.id.main_v_danger);
         scoreTextView = (TextView) findViewById(R.id.main_tv_points);
 

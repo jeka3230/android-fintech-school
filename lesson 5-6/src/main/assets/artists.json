@@ -1,0 +1,89 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "artist": "Linkin Park",
+      "genre": "Alternative rock",
+      "bio": "Linkin Park is an American rock band from Agoura Hills, California. Formed in 1996, the band rose to international fame with their debut album Hybrid Theory (2000), which was certified diamond by the RIAA in 2005 and multi-platinum in several other countries. Their following studio album Meteora continued the band's success, topping the Billboard 200 album chart in 2003, and was followed by extensive touring and charity work around the world. In 2003, MTV2 named Linkin Park the sixth-greatest band of the music video era and the third-best of the new millennium. Billboard ranked Linkin Park No. 19 on the Best Artists of the Decade chart. In 2012, the band was voted as the greatest artist of the 2000s in a Bracket Madness poll on VH1. In 2014, the band was declared as the Biggest Rock Band in the World Right Now by Kerrang!",
+      "faves": true,
+      "url": "http://static1.gamespot.com/uploads/original/1539/15391776/2550913-4650940812-linki.jpg",
+      "songs": [
+        "Numb",
+        "In the End",
+        "What I've Done",
+        "Breaking The Habit",
+        "Faint"
+      ]
+    },
+    {
+      "id": 2,
+      "artist": "Duke Dumont",
+      "genre": "Deep House",
+      "bio": "Adam George Dyment (born 27 August 1982), better known by his stage name Duke Dumont, is an English DJ, record producer and songwriter. He is best known for the singles 'Need U (100%)', 'I Got U' and 'Won't Look Back' which both reached number one and 2 in the UK Singles Chart respectively. He owns the record label Blasé Boys Club and has also used it as an alias for production. He has remixed a number of songs, including several which have charted in the United Kingdom. In 2014, 'Need U (100%)', was nominated for 'Best Dance Recording' for the 56th Annual Grammy Awards.",
+      "faves": false,
+      "url": "http://cdn.globaldanceelectronic.com/wp-content/uploads/2016/06/Duke-Dumont-At-The-Novo-Los-Angeles-Friday-September-23rd-2016.jpg",
+      "songs": [
+        "Ocean Drive",
+        "I Got U"
+      ]
+    },
+    {
+      "id": 3,
+      "artist": "Rammstein",
+      "genre": "Heavy metal",
+      "bio": "Rammstein is a German Neue Deutsche Härte band, formed in 1994 in Berlin. Throughout its existence, Rammstein's six-man lineup has been unchanged—singer Till Lindemann, guitarists Richard Z. Kruspe and Paul H. Landers, bassist Oliver 'Ollie' Riedel, drummer Christoph 'Doom' Schneider and keyboardist Christian 'Flake' Lorenz. The majority of their songs are in German, but they have also performed songs entirely or partially in other languages including English, Spanish, French, and Russian. Rammstein's award-winning live shows are known for their pyrotechnic elements and both on and off-stage theatrics. Rammstein's entire catalogue is published by Universal Music Group.",
+      "faves": false,
+      "url": "http://www.kerrang.com/wp-content/uploads/Rammstein.jpg",
+      "songs": [
+        "Du hast",
+        "Sonne",
+        "Ich will",
+        "Mein Herz brennt",
+        "Feuer Frei"
+      ]
+    },
+    {
+      "id": 4,
+      "artist": "Jessie Ware",
+      "genre": "Pop/Soul",
+      "bio": "Jessica Lois 'Jessie' Ware (born 15 October 1984) is an English singer and songwriter. Her debut studio album Devotion (2012) peaked at number five on the UK Albums Chart and produced the single 'Wildest Moments'. Her follow-up record Tough Love (2014) reached number nine in the United Kingdom. Ware has sung vocals for Joker and SBTRKT, in concert and on their recordings.",
+      "faves": true,
+      "url": "http://kuberadio.com/wp-content/uploads/2014/09/Jessie-Ware.jpg",
+      "songs": [
+        "Tough Love",
+        "You & I",
+        "Save you love me"
+      ]
+    },
+    {
+      "id": 5,
+      "artist": "The XX",
+      "genre": "Indie Rock/Dream Pop",
+      "bio": "The xx are an English alternative band formed in 2005 in Wandsworth, London. The group released its debut album, xx, in August 2009. The album was a commercial and critical success and was ranked highly on many best of 2009 lists, including number one on the list compiled by The Guardian and second for NME. In 2010, the band won the Mercury Music Prize for its debut album. Their second album, Coexist, was released on 10 September 2012.",
+      "faves": true,
+      "url": "http://www.electru.de/wp-content/uploads/the-xx-new-tracks-2012.png",
+      "songs": [
+        "Intro",
+        "Angels",
+        "Crystalised",
+        "Together",
+        "Shelter"
+      ]
+    },
+    {
+      "id": 6,
+      "artist": "One Republic",
+      "genre": "Pop Rock",
+      "bio": "OneRepublic is an American pop rock band. Formed in Colorado Springs, Colorado in 2002 by lead singer Ryan Tedder and guitarist Zach Filkins, the band achieved commercial success on Myspace as an unsigned act. In late 2003, after OneRepublic played shows throughout the Los Angeles area, a number of record labels approached the band with interest, but OneRepublic ultimately signed with Velvet Hammer, an imprint of Columbia Records. They made their first album with producer Greg Wells during the summer and fall of 2005 at his studio, Rocket Carousel, in Culver City, California. The album was originally scheduled for release on June 6, 2006, but the group was dropped by Columbia two months before the album ever came out. The lead single of that album, 'Apologize', was released on April 30th 2006 on Myspace and received some recognition on that cite being number one on My Space charts.",
+      "faves": false,
+      "url": "https://i.ytimg.com/vi/XWcF2OPH1vc/maxresdefault.jpg",
+      "songs": [
+        "Counting Stars",
+        "Wherever I Go",
+        "Secrets",
+        "If I lose myself",
+        "Apologize"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MusicInfo</string>
+    <string name="songs">Popular songs</string>
+
+    <!--  Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">No artists no show</string>
+</resources>
